@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ==================== CUSTOMIZE METADATA ==================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert text to PDF online for free! Our tool creates professional PDF documents instantly with customizable fonts, layouts, and formatting. No registration required - works on all devices.">
+    <meta name="keywords" content="text to pdf, online pdf converter, free pdf creator, convert text to pdf, create pdf online, document converter, pdf generator, text to pdf download, web pdf converter, html to pdf">
+    <meta name="author" content="Your Company Name">
+    <title>Text to PDF Converter- Text to PDF Converter</title>
+
+    <!-- ==================== CUSTOMIZE SOCIAL MEDIA PREVIEW ==================== -->
+    <meta property="og:title" content="Your Social Media Title">
+    <meta property="og:description" content="Your social media description">
+    <meta property="og:image" content="https://yourwebsite.com/path-to-preview-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- ==================== CUSTOMIZE FAVICON ==================== -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- ==================== CUSTOMIZE FONTS ==================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- ==================== CUSTOMIZE GOOGLE ADSENSE ==================== -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID" crossorigin="anonymous"></script>
+
+    <style>
+        /* ==================== CUSTOMIZE COLORS ==================== */
+        :root {
+            --primary-color: #4a6bff;       /* Main brand color */
+            --secondary-color: #6c757d;     /* Secondary color */
+            --accent-color: #ff6b6b;        /* Accent color for buttons */
+            --light-color: #f8f9fa;         /* Light background color */
+            --dark-color: #212529;          /* Dark text color */
+            --gray-color: #6c757d;          /* Gray text color */
+            --border-color: #dee2e6;        /* Border color */
+            --success-color: #28a745;       /* Success message color */
+            --error-color: #dc3545;         /* Error message color */
+            --header-bg: #ffffff;           /* Header background */
+            --footer-bg: #2c3e50;           /* Footer background */
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+
+        /* ==================== BASE STYLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ==================== CUSTOMIZE HEADER ==================== */
+        header {
+            background-color: var(--header-bg);
+            color: var(--dark-color);
+            padding: 30px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--gray-color);
+        }
+
+        /* ==================== CUSTOMIZE NAVIGATION ==================== */
+        nav {
+            background-color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            padding: 15px 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ==================== CUSTOMIZE MAIN CONTENT ==================== */
+        main {
+            margin-bottom: 40px;
+        }
+
+        .converter-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .text-input-container, .options-container {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+            padding: 25px;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        /* ==================== CUSTOMIZE TOOLBAR ==================== */
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .toolbar button {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            min-width: 36px;
+        }
+
+        .toolbar button:hover {
+            background-color: var(--light-color);
+        }
+
+        .toolbar select {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        #bold-btn { font-weight: bold; }
+        #italic-btn { font-style: italic; }
+        #underline-btn { text-decoration: underline; }
+
+        /* ==================== CUSTOMIZE TEXT AREA ==================== */
+        #text-input {
+            width: 100%;
+            min-height: 300px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 16px;
+            resize: vertical;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .word-count {
+            text-align: right;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        /* ==================== CUSTOMIZE PDF OPTIONS ==================== */
+        .options-container h3 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--primary-color);
+        }
+
+        .option-group {
+            margin-bottom: 15px;
+        }
+
+        .option-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .option-group input[type="text"],
+        .option-group input[type="number"],
+        .option-group select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .option-group input[type="checkbox"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ==================== CUSTOMIZE BUTTONS ==================== */
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            font-size: 16px;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary:hover {
+            background-color: #3a5bd9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ==================== CUSTOMIZE INSTRUCTIONS SECTION ==================== */
+        .how-it-works {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin-bottom: 40px;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .how-it-works h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .how-it-works ol, .features ul {
+            margin-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        .how-it-works li {
+            margin-bottom: 10px;
+        }
+
+        .features {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .features h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* ==================== CUSTOMIZE AD CONTAINERS ==================== */
+        .ad-container {
+            margin: 30px 0;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            border: 1px dashed var(--border-color);
+        }
+
+        .ad-label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.8rem;
+            color: var(--gray-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ==================== CUSTOMIZE FOOTER ==================== */
+        footer {
+            background-color: var(--footer-bg);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-section p, .footer-section ul {
+            color: #bdc1c6;
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section ul li a {
+            color: #bdc1c6;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ==================== CUSTOMIZE RESPONSIVE DESIGN ==================== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .converter-section {
+                flex-direction: column;
+            }
+            
+            .text-input-container, .options-container {
+                width: 100%;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+            
+            .toolbar {
+                justify-content: center;
+            }
+            
+            #text-input {
+                min-height: 250px;
+            }
+            
+            .how-it-works, .text-input-container, .options-container {
+                padding: 20px 15px;
+            }
+        }
+
+        /* ==================== CUSTOMIZE UTILITY CLASSES ==================== */
+        .text-center { text-align: center; }
+        .mt-20 { margin-top: 20px; }
+        .mb-20 { margin-bottom: 20px; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <!-- ==================== CUSTOMIZE HEADER CONTENT ==================== -->
+    <header>
+        <div class="container">
+            <h1>Your Brand Name</h1>
+            <p>Convert any text to professional PDF documents in seconds</p>
+        </div>
+    </header>
+    
+    <!-- ==================== CUSTOMIZE NAVIGATION LINKS ==================== -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/tutorial">How To Use</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <!-- ==================== CUSTOMIZE TOP AD ==================== -->
+        <div class="ad-container">
+            <span class="ad-label">Advertisement</span>
+            <!-- Replace with your AdSense code -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Top Banner -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <!-- ==================== MAIN CONVERTER SECTION ==================== -->
+        <section class="converter-section">
+            <div class="text-input-container">
+                <div class="toolbar">
+                    <button id="bold-btn" title="Bold"><strong>B</strong></button>
+                    <button id="italic-btn" title="Italic"><em>I</em></button>
+                    <button id="underline-btn" title="Underline"><u>U</u></button>
+                    <select id="font-size" title="Font Size">
+                        <option value="12px">Small</option>
+                        <option value="14px" selected>Medium</option>
+                        <option value="16px">Large</option>
+                        <option value="18px">Extra Large</option>
+                    </select>
+                    <select id="font-family" title="Font Family">
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value='Courier New'>Courier New</option>
+                        <option value="Georgia">Georgia</option>
+                    </select>
+                    <button id="clear-btn" title="Clear Text">Clear</button>
+                </div>
+                <textarea id="text-input" placeholder="Type or paste your text here..."></textarea>
+                <div class="word-count">Words: <span id="word-count">0</span> | Characters: <span id="char-count">0</span></div>
+            </div>
+            
+            <div class="options-container">
+                <h3>PDF Settings</h3>
+                <div class="option-group">
+                    <label for="page-size">Page Size:</label>
+                    <select id="page-size">
+                        <option value="A4">A4 (210 × 297 mm)</option>
+                        <option value="Letter">Letter (216 × 279 mm)</option>
+                        <option value="Legal">Legal (216 × 356 mm)</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label for="page-orientation">Orientation:</label>
+                    <select id="page-orientation">
+                        <option value="portrait">Portrait</option>
+                        <option value="landscape">Landscape</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label for="margin">Margin (mm):</label>
+                    <input type="number" id="margin" value="15" min="0" max="50">
+                </div>
+                <div class="option-group">
+                    <label for="filename">File Name:</label>
+                    <input type="text" id="filename" value="my-document">
+                </div>
+                <div class="option-group">
+                    <label>
+                        <input type="checkbox" id="include-date" checked>
+                        Include creation date
+                    </label>
+                </div>
+                <div class="option-group">
+                    <label>
+                        <input type="checkbox" id="include-page-numbers">
+                        Include page numbers
+                    </label>
+                </div>
+                <button id="generate-pdf" class="btn-primary">
+                    <span id="generate-text">Generate PDF</span>
+                    <span id="generating-text" class="hidden">Generating...</span>
+                </button>
+            </div>
+        </section>
+        
+        <!-- ==================== CUSTOMIZE MIDDLE AD ==================== -->
+        <div class="ad-container">
+            <span class="ad-label">Advertisement</span>
+            <!-- Replace with your AdSense code -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Middle Rectangle -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <!-- ==================== CUSTOMIZE INSTRUCTIONS ==================== -->
+        <section class="how-it-works">
+            <h2>How to Convert Text to PDF</h2>
+            <ol>
+                <li><strong>Enter your text</strong> in the editor box above</li>
+                <li><strong>Format your content</strong> using the toolbar (optional)</li>
+                <li><strong>Adjust PDF settings</strong> to your preferences</li>
+                <li><strong>Click "Generate PDF"</strong> to create your document</li>
+                <li><strong>Download</strong> your professional PDF file</li>
+            </ol>
+            
+            <div class="features">
+                <h3>Why Choose Our Converter?</h3>
+                <ul>
+                    <li><strong>100% Free</strong> - No hidden charges or watermarks</li>
+                    <li><strong>No Registration</strong> - Convert instantly without signing up</li>
+                    <li><strong>Privacy Focused</strong> - Your text never leaves your browser</li>
+                    <li><strong>Full Features</strong> - Multiple formatting and layout options</li>
+                    <li><strong>Works Everywhere</strong> - Desktop, tablet, and mobile friendly</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- ==================== CUSTOMIZE BOTTOM AD ==================== -->
+        <div class="ad-container">
+            <span class="ad-label">Advertisement</span>
+            <!-- Replace with your AdSense code -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Bottom Banner -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </main>
+    
+    <!-- ==================== CUSTOMIZE FOOTER CONTENT ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>We provide free online tools to help you work more efficiently. Our tools are simple, secure, and accessible from any device.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/contact">Contact Support</a></li>
+                        <li><a href="/blog">Our Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>More Tools</h4>
+                    <ul>
+                        <li><a href="/pdf-to-word">PDF to Word</a></li>
+                        <li><a href="/image-converter">Image Converter</a></li>
+                        <li><a href="/file-compressor">File Compressor</a></li>
+                        <li><a href="/all-tools">View All Tools</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="current-year"></span> Your Company Name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ==================== PDF LIBRARY ==================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <script>
+        // ==================== CUSTOMIZE JAVASCRIPT ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // DOM elements
+            const textInput = document.getElementById('text-input');
+            const boldBtn = document.getElementById('bold-btn');
+            const italicBtn = document.getElementById('italic-btn');
+            const underlineBtn = document.getElementById('underline-btn');
+            const fontSizeSelect = document.getElementById('font-size');
+            const fontFamilySelect = document.getElementById('font-family');
+            const clearBtn = document.getElementById('clear-btn');
+            const wordCountSpan = document.getElementById('word-count');
+            const charCountSpan = document.getElementById('char-count');
+            const generatePdfBtn = document.getElementById('generate-pdf');
+            const generateText = document.getElementById('generate-text');
+            const generatingText = document.getElementById('generating-text');
+            
+            // Update word and character count
+            textInput.addEventListener('input', updateCounts);
+            
+            function updateCounts() {
+                const text = textInput.value.trim();
+                const words = text ? text.split(/\s+/).filter(word => word.length > 0).length : 0;
+                const chars = text.length;
+                
+                wordCountSpan.textContent = words;
+                charCountSpan.textContent = chars;
+            }
+            
+            // Text formatting functions
+            boldBtn.addEventListener('click', () => formatText('bold'));
+            italicBtn.addEventListener('click', () => formatText('italic'));
+            underlineBtn.addEventListener('click', () => formatText('underline'));
+            
+            function formatText(format) {
+                const start = textInput.selectionStart;
+                const end = textInput.selectionEnd;
+                const selectedText = textInput.value.substring(start, end);
+                
+                if (!selectedText) return;
+                
+                let formattedText = selectedText;
+                
+                switch(format) {
+                    case 'bold':
+                        formattedText = `<strong>${selectedText}</strong>`;
+                        break;
+                    case 'italic':
+                        formattedText = `<em>${selectedText}</em>`;
+                        break;
+                    case 'underline':
+                        formattedText = `<u>${selectedText}</u>`;
+                        break;
+                }
+                
+                textInput.setRangeText(formattedText, start, end);
+                updateCounts();
+            }
+            
+            // Font changes
+            fontSizeSelect.addEventListener('change', function() {
+                textInput.style.fontSize = this.value;
+            });
+            
+            fontFamilySelect.addEventListener('change', function() {
+                textInput.style.fontFamily = this.value;
+            });
+            
+            // Clear text
+            clearBtn.addEventListener('click', function() {
+                if (confirm('Are you sure you want to clear all text?')) {
+                    textInput.value = '';
+                    updateCounts();
+                }
+            });
+            
+            // Initialize with default font
+            textInput.style.fontSize = fontSizeSelect.value;
+            textInput.style.fontFamily = fontFamilySelect.value;
+            
+            // PDF Generation
+            generatePdfBtn.addEventListener('click', generatePDF);
+            
+            function generatePDF() {
+                const text = document.getElementById('text-input').value;
+                const pageSize = document.getElementById('page-size').value;
+                const orientation = document.getElementById('page-orientation').value;
+                const margin = parseInt(document.getElementById('margin').value);
+                const filename = document.getElementById('filename').value;
+                const includeDate = document.getElementById('include-date').checked;
+                const includePageNumbers = document.getElementById('include-page-numbers').checked;
+                
+                if (!text.trim()) {
+                    alert('Please enter some text to convert to PDF');
+                    return;
+                }
+                
+                // Show generating state
+                generateText.classList.add('hidden');
+                generatingText.classList.remove('hidden');
+                generatePdfBtn.disabled = true;
+                
+                // Use setTimeout to allow UI to update before heavy processing
+                setTimeout(() => {
+                    try {
+                        const { jsPDF } = window.jspdf;
+                        
+                        // Create PDF
+                        const doc = new jsPDF({
+                            orientation: orientation,
+                            unit: 'mm',
+                            format: pageSize
+                        });
+                        
+                        // Set margins
+                        const pageWidth = doc.internal.pageSize.getWidth();
+                        const pageHeight = doc.internal.pageSize.getHeight();
+                        const leftMargin = margin;
+                        const rightMargin = margin;
+                        const topMargin = margin;
+                        const bottomMargin = margin;
+                        
+                        // Calculate available width and height
+                        const availableWidth = pageWidth - leftMargin - rightMargin;
+                        const availableHeight = pageHeight - topMargin - bottomMargin;
+                        
+                        // Set font
+                        doc.setFont('helvetica');
+                        doc.setFontSize(12);
+                        
+                        // Add header with date if enabled
+                        let yPosition = topMargin;
+                        
+                        if (includeDate) {
+                            const date = new Date().toLocaleDateString();
+                            doc.text(`Created: ${date}`, leftMargin, yPosition);
+                            yPosition += 10;
+                        }
+                        
+                        // Split text into lines
+                        const lines = doc.splitTextToSize(text, availableWidth);
+                        
+                        let currentPage = 1;
+                        const totalPages = Math.ceil(lines.length / Math.floor(availableHeight / 10));
+                        
+                        // Add text to PDF
+                        for (let i = 0; i < lines.length; i++) {
+                            // Check if we need a new page
+                            if (yPosition > availableHeight) {
+                                // Add page number if enabled
+                                if (includePageNumbers) {
+                                    doc.setFontSize(10);
+                                    doc.text(`Page ${currentPage} of ${totalPages}`, pageWidth - rightMargin - 20, pageHeight - bottomMargin + 10, { align: 'right' });
+                                    doc.setFontSize(12);
+                                }
+                                
+                                doc.addPage(pageSize, orientation);
+                                yPosition = topMargin;
+                                currentPage++;
+                            }
+                            
+                            doc.text(lines[i], leftMargin, yPosition);
+                            yPosition += 7; // Line height
+                        }
+                        
+                        // Add final page number if enabled
+                        if (includePageNumbers) {
+                            doc.setFontSize(10);
+                            doc.text(`Page ${currentPage} of ${totalPages}`, pageWidth - rightMargin - 20, pageHeight - bottomMargin + 10, { align: 'right' });
+                        }
+                        
+                        // Save the PDF
+                        doc.save(`${filename}.pdf`);
+                        
+                    } catch (error) {
+                        console.error('PDF generation error:', error);
+                        alert('An error occurred while generating the PDF. Please try again.');
+                    } finally {
+                        // Reset button state
+                        generateText.classList.remove('hidden');
+                        generatingText.classList.add('hidden');
+                        generatePdfBtn.disabled = false;
+                    }
+                }, 100);
+            }
+            
+            // Load sample text on first visit
+            if (!localStorage.getItem('visited-before')) {
+                textInput.value = "Welcome to our Text to PDF Converter!\n\nThis is a sample document. You can edit this text or clear it to start your own document.\n\nFeatures:\n- Easy text formatting\n- Multiple page size options\n- Custom margins\n- Download as PDF";
+                updateCounts();
+                localStorage.setItem('visited-before', 'true');
+            }
+        });
+    </script>
+</body>
+</html>
